@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TesteDrive.Views.ListagemView"
+             Title="Teste Drive" Visual="Material">
+
+
+    <!--#region Mostrar lista com mais propriedade formatada-->
+    <!--<ListView x:Name="listviewVeiculos" ItemsSource="{Binding Veiculos}" RowHeight="500">        
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.View>
+                        <StackLayout Orientation="Vertical">                            
+                            <Label Text="{Binding Nome,StringFormat='Carro: {0}'}" VerticalOptions="Center"/>                           
+                            <Label Text="{Binding Preco, StringFormat='Preço: {0}'}" VerticalOptions="Center"/>                           
+                            <Label Text="{Binding Ano, StringFormat='Ano: {0}'}" VerticalOptions="Center"/>    
+                        </StackLayout>
+                    </ViewCell.View>                    
+                </ViewCell>               
+            </DataTemplate>
+        </ListView.ItemTemplate>        
+    </ListView>-->
+    <!--#region -->
+
+    <ListView x:Name="listviewVeiculos" ItemsSource="{Binding Veiculos}" Margin="25" ItemTapped="listviewVeiculos_ItemTapped">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.View>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Nome}" FontSize="20" VerticalTextAlignment="Center"/>
+                            <Label Text=" - " VerticalTextAlignment="Center"/>
+                            <Label Text="{Binding PrecoFormatado}" FontAttributes="Bold" VerticalTextAlignment="Center"/>
+                        </StackLayout>
+                    </ViewCell.View>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+
+</ContentPage>
