@@ -4,40 +4,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TesteDrive.Models;
-using TesteDrive.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace TesteDrive.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DetalheView : ContentPage
+    public partial class LoginView : ContentPage
     {
-        public Veiculo Veiculo { get; set; }
-
-        public DetalheView(Veiculo veiculo)
+        public LoginView()
         {
             InitializeComponent();
-            this.Veiculo = veiculo;
-            this.BindingContext = new DetalheViewModel(veiculo);
         }
 
-        
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
-            MessagingCenter.Subscribe<Veiculo>(this, "Proximo", (msg) =>
+            MessagingCenter.Subscribe<LoginException>(this, "FalhaLogin",async(exc) => 
             {
-                Navigation.PushAsync(new AgendamentoView(msg));
+                await DisplayAlert("Login", exc.Message, "Ok");                
             });
-
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            MessagingCenter.Unsubscribe<Veiculo>(this,"Proximo");
+            MessagingCenter.Unsubscribe<LoginException>(this, "FalhaLogin");
         }
 
     }

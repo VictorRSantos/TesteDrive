@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteDrive.Android", "Teste
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteDrive.iOS", "TesteDrive\TesteDrive.iOS\TesteDrive.iOS.csproj", "{6C764F9C-3C2C-4B3B-8502-00966DDEBB46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteDrive", "TesteDrive\TesteDrive\TesteDrive.csproj", "{A8466B11-CEAD-4FA9-9E98-31FF59D62D34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesteDrive", "TesteDrive\TesteDrive\TesteDrive.csproj", "{A8466B11-CEAD-4FA9-9E98-31FF59D62D34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +38,7 @@ Global
 		{CF069CED-EBD0-4455-A173-1C6EF7CCCBEE}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{CF069CED-EBD0-4455-A173-1C6EF7CCCBEE}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
 		{6C764F9C-3C2C-4B3B-8502-00966DDEBB46}.Debug|Any CPU.ActiveCfg = Debug|iPhone
+		{6C764F9C-3C2C-4B3B-8502-00966DDEBB46}.Debug|Any CPU.Build.0 = Debug|iPhone
 		{6C764F9C-3C2C-4B3B-8502-00966DDEBB46}.Debug|Any CPU.Deploy.0 = Debug|iPhone
 		{6C764F9C-3C2C-4B3B-8502-00966DDEBB46}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{6C764F9C-3C2C-4B3B-8502-00966DDEBB46}.Debug|iPhone.Build.0 = Debug|iPhone
