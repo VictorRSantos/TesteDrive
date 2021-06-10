@@ -4,9 +4,10 @@
              xmlns:view="clr-namespace:TesteDrive.Views"
              x:Class="TesteDrive.Views.FlyoutPageView" >
 
-    <FlyoutPage.Flyout>
+    <!---MASTER DETAIL VIEW-->
+    <!--<FlyoutPage.Flyout>
         <view:FlyoutView/>
-    </FlyoutPage.Flyout>
+    </FlyoutPage.Flyout>-->
 
     <FlyoutPage.Detail>
         <NavigationPage>
