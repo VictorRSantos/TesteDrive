@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
 using TesteDrive.Models;
+using Xamarin.Forms;
 
 namespace TesteDrive.ViewModels
 {
@@ -22,10 +24,17 @@ namespace TesteDrive.ViewModels
 
         private readonly Usuario usuario;
 
+        public ICommand EditarPerfilCommand { get; private set; }
+
         public FlyoutViewModel(Usuario usuario)
         {
 
             this.usuario = usuario;
+
+            EditarPerfilCommand = new Command(() =>
+            {
+                MessagingCenter.Send<Usuario>(usuario, "EditarPerfil");
+            });
 
         }
 
