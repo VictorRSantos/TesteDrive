@@ -1,8 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters ="clr-namespace:TesteDrive.Converters"
              x:Class="TesteDrive.Views.FlyoutView" Title="Perfil">
 
+
+    <TabbedPage.Resources>
+        <ResourceDictionary>
+            <converters:NegativoConverter x:Key="negativo"/>
+        </ResourceDictionary>
+    </TabbedPage.Resources>
 
     <TabbedPage.Children>
         <ContentPage Title="Usuário">
@@ -16,8 +23,26 @@
                 </StackLayout>
             </Frame>
         </ContentPage>
+
         <ContentPage Title="Editar">
 
+            <Frame Margin="15" BorderColor="Silver" VerticalOptions="CenterAndExpand">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <TableView>
+                        <TableRoot>
+                            <TableSection Title="Dados Pessoais">
+                                <EntryCell Placeholder="Nome" Text="{Binding Nome}" IsEnabled="{Binding Editando}"></EntryCell>
+                                <EntryCell Placeholder="Data de Nascimento" Text="{Binding DataNascimento}" IsEnabled="{Binding Editando}"></EntryCell>
+                                <EntryCell Placeholder="Telefone" Text="{Binding Telefone}" IsEnabled="{Binding Editando}"></EntryCell>
+                                <EntryCell Placeholder="E-mail" Text="{Binding Email}" IsEnabled="{Binding Editando}"></EntryCell>
+                            </TableSection>
+                        </TableRoot>
+                    </TableView>
+                    <Button Text="Salvar" Command="{Binding SalvarCommand}" IsVisible="{Binding Editando}" />
+                    <Button Text="Editar" Command="{Binding EditarCommand}" IsVisible="{Binding Editando, Converter={StaticResource negativo}}"/>
+                </StackLayout>
+            </Frame>
+          
         </ContentPage>
     </TabbedPage.Children>
 
