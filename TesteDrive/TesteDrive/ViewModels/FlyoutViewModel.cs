@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
+using TesteDrive.Midia;
 using TesteDrive.Models;
 using Xamarin.Forms;
 
@@ -12,12 +13,19 @@ namespace TesteDrive.ViewModels
 
         private bool editando = false;
 
+        private ImageSource fotoPerfil = "perfil.png";
+
+        public ImageSource FotoPerfil
+        {
+            get { return fotoPerfil; }
+            private set { fotoPerfil = value; }
+        }
+
         public bool Editando
         {
             get { return editando; }
             private set { editando = value; OnPropertyChanged(); }
         }
-
 
         public string Nome
         {
@@ -51,6 +59,9 @@ namespace TesteDrive.ViewModels
 
         public ICommand EditarCommand { get; private set; }
 
+        public ICommand TirarFotoCommand { get; private set; }
+
+
         public FlyoutViewModel(Usuario usuario)
         {
 
@@ -81,6 +92,11 @@ namespace TesteDrive.ViewModels
             {
                 this.Editando = true;
             
+            });
+
+            TirarFotoCommand = new Command(() =>
+            {
+                DependencyService.Get<ICamera>().TirarFoto();
             });
 
         }

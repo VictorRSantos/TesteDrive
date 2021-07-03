@@ -13,8 +13,9 @@
 
     <TabbedPage.Children>
         <ContentPage Title="Usuário">
-            <Frame BorderColor="Silver" Margin="15" VerticalOptions="CenterAndExpand">
+            <Frame BorderColor="Silver" BackgroundColor="AliceBlue" Margin="15" VerticalOptions="CenterAndExpand">
                 <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <Image Source="{Binding FotoPerfil}"/>
                     <Label Text="{Binding Nome}" TextColor="Black"/>
                     <BoxView Color="Gray" HeightRequest="1" HorizontalOptions="Fill"/>
                     <Label Text="{Binding Email}" TextColor="Black"/>
@@ -26,8 +27,10 @@
 
         <ContentPage Title="Editar">
 
-            <Frame Margin="15" BorderColor="Silver" VerticalOptions="CenterAndExpand">
+            <Frame Margin="15" BorderColor="Silver" VerticalOptions="CenterAndExpand" BackgroundColor="Transparent">
                 <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <Image Source="{Binding FotoPerfil}"/>
+                    <Button Text="Tirar Foto" Command="{Binding TirarFotoCommand}"/>
                     <TableView>
                         <TableRoot>
                             <TableSection Title="Dados Pessoais">
